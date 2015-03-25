@@ -21,7 +21,7 @@ public class Controller {
     @Autowired
     Service service;
 
-    @RequestMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(method = GET, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     public List<String> getDeadDrops() {
         return service.getDeadrops();
     }
