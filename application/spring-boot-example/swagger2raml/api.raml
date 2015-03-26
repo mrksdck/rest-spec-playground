@@ -1,0 +1,59 @@
+#%RAML 0.8
+---
+title: Example App
+version: 1.0
+/dead-drops:
+  get:
+    description: getDeadDrops
+    responses:
+      200:
+        body:
+          application/json:
+            schema: {}
+  /{name}:
+    delete:
+      description: removeDeadDrop
+      responses:
+        200:
+          body:
+            application/json:
+              schema: {}
+    get:
+      description: getMessage
+      responses:
+        200:
+          body:
+            application/json:
+              schema: {}
+    post:
+      description: setDeadDrop
+      body:
+        application/json:
+          schema: |
+            {
+                "type": "object",
+                "properties": {
+                    
+                }
+            }
+      responses:
+        200:
+          body:
+            */*:
+              schema: {}
+    put:
+      description: setMessage
+      body:
+        application/json:
+          schema: |
+            {
+                "type": "object",
+                "properties": {
+                    
+                }
+            }
+      responses:
+        200:
+          body:
+            application/json:
+              schema: {}
