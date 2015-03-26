@@ -2,7 +2,7 @@ package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
 import io.swagger.client.ApiInvoker;
-
+import io.swagger.client.model.Void;
 import io.swagger.client.model.*;
 
 import java.util.*;
@@ -135,7 +135,7 @@ public class DeaddropsApi {
   }
   
     
-  public Void setMessage (String name,  body) throws ApiException {
+  public Void setMessage (String name,  Object body) throws ApiException {
     Object postBody = body;
     
 
@@ -186,7 +186,7 @@ public class DeaddropsApi {
   }
   
     
-  public Void setDeadDrop (String name,  body) throws ApiException {
+  public Void setDeadDrop (String name,  Object body) throws ApiException {
     Object postBody = body;
     
 
