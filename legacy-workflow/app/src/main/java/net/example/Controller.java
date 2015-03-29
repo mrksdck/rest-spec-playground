@@ -15,13 +15,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
  * Created by mbdecke on 3/25/15.
  */
 @RestController
-@RequestMapping(value = "/dead-drops")
+@RequestMapping(value = "/dead-drops", consumes = APPLICATION_JSON_VALUE)
 public class Controller {
 
     @Autowired
     Service service;
 
-    @RequestMapping(method = GET, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    @RequestMapping(method = GET, produces = APPLICATION_JSON_VALUE)
     public List<String> getDeadDrops() {
         return service.getDeadrops();
     }

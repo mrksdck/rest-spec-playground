@@ -10,10 +10,11 @@ Lists all dead drops available
 
 ## Retrieve the Entry Point [GET]
 
-+ Response 200 (application/json)
-
++ Request (application/json;charset=UTF-8)
++ Response 200 (application/json;charset=UTF-8)
+    
         [
-            "car","tire"
+            "car","tire"        
          ]
 
 ## dead drop [/dead-drops/{name}]
@@ -22,26 +23,29 @@ Lists all dead drops available
     + name (required, string, `car`) ... name of dead drop
 
 ### View message of dead-drop [GET]
-
-+ Response 200 (application/json)
++ Request (application/json;charset=UTF-8)
++ Response 200 (application/json;charset=UTF-8)
 
         "the eagle has landed"
-
++ Response 404
+    
 ### Add new dead drop with message [POST]
 
-+ Body
-    "the squirrel is not home"
++ Request (application/json;charset=UTF-8)
 
-+ Response 200 (application/json)
+        "the squirrel is not home"
+
++ Response 200
 
 ### Updates dead drop with message [PUT]
 
-+ Body
-    "be right back"
++ Request (application/json;charset=UTF-8)
 
-+ Response 200 (application/json)
+        "be right back"
 
++ Response 200 
 
+    
 ### Deletes new dead drop with message [DELETE]
-
-+ Response 200 (application/json)
++ Request (application/json;charset=UTF-8)
++ Response 200 
