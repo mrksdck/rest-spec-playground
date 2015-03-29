@@ -1,0 +1,84 @@
+#%RAML 0.8
+---
+baseUri: http://mocksvc.mulesoft.com/mocks/38e502f3-e21e-4d35-8308-19f3384f2c02
+title: Example App
+version: 1.0
+/dead-drops:
+  get:
+    description: list of all dead drops
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              ["abandoned-car","old-tree"]
+            schema: |
+              {
+                "$schema": "http://json-schema.org/draf04/schema#",
+                "title" : "Dead Drops",
+                "description" : "List of all dead drops",
+                "type" : "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+  /{name}:
+    uriParameters:
+      name:
+        displayName: name of dead drop
+        type: string
+    delete:
+      description: remove message from dead drop with `name = {name}`
+      responses:
+        200:
+          body:
+            application/json:
+    get:
+      description: get message from dead drop with `name = {name}`
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                "the squirrel is not home"
+              schema: |
+                {
+                  "$schema": "http://json-schema.org/draf04/schema#",
+                  "title" : "message",
+                  "description" : "Message of dead drop",
+                  "type" : "string"
+                }
+    post:
+      description: adds message and dead drop with `name = {name}`
+      body:
+        application/json:
+          example: |
+            "the squirrel is not home"
+          schema: |
+            {
+              "$schema": "http://json-schema.org/draf04/schema#",
+              "title" : "message",
+              "description" : "Message of dead drop",
+              "type" : "string"
+            }
+      responses:
+        200:
+    put:
+      description: updates message of dead drop with `name = {name}`
+      body:
+        application/json:
+          example: |
+            "eagle has landed"
+          schema: |
+            {
+              "$schema": "http://json-schema.org/draf04/schema#",
+              "title" : "message",
+              "description" : "Message of dead drop",
+              "type" : "string"
+            }
+      responses:
+        200:
+          body:
+            application/json:
