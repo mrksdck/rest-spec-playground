@@ -16,3 +16,4 @@ first create a spec with editor or online tools
 ##helpful tools
 * [abao](https://github.com/cybertk/abao) – verifies endpoints – usage : `abao api.raml http://localhost:8080/`
 * [raml-mockup](https://github.com/gextech/raml-mockup) – creates mock service – usage `raml-mockup api.raml`
+* [raml to jaxrs](raml-to-jaxrs) – creates jersey interfaces – usage `mvn generate-sources`
