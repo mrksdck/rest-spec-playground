@@ -23,15 +23,15 @@ Lists all dead drops available
     + name (required, string, `car`) ... name of dead drop
 
 ### View message of dead-drop [GET]
-+ Request (application/json;charset=UTF-8)
-+ Response 200 (application/json;charset=UTF-8)
++ Request (application/json; charset=UTF-8)
++ Response 200 (application/json; charset=UTF-8)
 
         "the eagle has landed"
 + Response 404
     
 ### Add new dead drop with message [POST]
 
-+ Request (application/json;charset=UTF-8)
++ Request (application/json; charset=UTF-8)
 
         "the squirrel is not home"
 
@@ -39,7 +39,7 @@ Lists all dead drops available
 
 ### Updates dead drop with message [PUT]
 
-+ Request (application/json;charset=UTF-8)
++ Request (application/json; charset=UTF-8)
 
         "be right back"
 
