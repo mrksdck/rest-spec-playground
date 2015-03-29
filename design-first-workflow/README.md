@@ -12,6 +12,7 @@ first create a spec with editor or online tools
 ###Example specs:
 * [swagger](swagger.json)
 * [raml](api.raml)
+* [apiblueprint](blueprint.md)
 
 ##helpful tools
 ####mock server
