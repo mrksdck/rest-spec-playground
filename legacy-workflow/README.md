@@ -2,7 +2,6 @@ Legacy App Workflow
 ===================
 
 [Example App](app) made with spring to show legacy app workflow.
-That has no documentation.
 
 ##Possible Workflow
 
