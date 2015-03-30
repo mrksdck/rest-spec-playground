@@ -14,38 +14,29 @@ Lists all dead drops available
 + Response 200 (application/json;charset=UTF-8)
     
         [
-            "car","tire"        
-         ]
+            { "name" : "abandoned-car", "message" : "the eagle has landed" },
+            { "name" : "old-tree", "message" : "the squirrel is not home" }
+        ]
 
 ## dead drop [/dead-drops/{name}]
 
 + Parameters
-    + name (required, string, `car`) ... name of dead drop
+    + name (required, string, `abandoned-car`) ... name of dead drop
 
 ### View message of dead-drop [GET]
-+ Request (application/json; charset=UTF-8)
-+ Response 200 (application/json; charset=UTF-8)
++ Request (application/json;charset=UTF-8)
++ Response 200 (application/json;charset=UTF-8)
 
-        "the eagle has landed"
-+ Response 404
-    
-### Add new dead drop with message [POST]
+        { "name" : "abandoned-car", "message" : "the eagle has landed" }
+        
+### Stores dead drop with message [PUT]
 
-+ Request (application/json; charset=UTF-8)
++ Request (application/json;charset=UTF-8)
 
-        "the squirrel is not home"
-
-+ Response 200
-
-### Updates dead drop with message [PUT]
-
-+ Request (application/json; charset=UTF-8)
-
-        "be right back"
-
-+ Response 200 
+        { "name" : "abandoned-car", "message" : "the eagle has landed" }
++ Response 204 
 
     
 ### Deletes new dead drop with message [DELETE]
 + Request (application/json;charset=UTF-8)
-+ Response 200 
++ Response 204 

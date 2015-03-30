@@ -17,12 +17,21 @@ version: 1.0
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "title" : "Dead Drops",
                 "description" : "List of all dead drops",
-                "type" : "array",
+                "type": "array",
                 "items": {
-                  "type": "string"
-                },
-                "minItems": 1,
-                "uniqueItems": true
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                       "title" : "Dead Drop",
+                       "description" : "name and content of dead drop",
+                       "type": "object",
+                       "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "string"
+                            }
+                        },"required": ["name", "message"]
+                  }
               }
   /{name}:
     uriParameters:
@@ -32,7 +41,7 @@ version: 1.0
     delete:
       description: remove message from dead drop with `name = {name}`
       responses:
-        200:
+        204:
           body:
             application/json:
     get:
@@ -42,43 +51,46 @@ version: 1.0
           body:
             application/json:
               example: |
-                "the squirrel is not home"
+                { "name" : "abandoned-car", "message" : "the eagle has landed"
               schema: |
                 {
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "title" : "message",
-                  "description" : "Message of dead drop",
-                  "type" : "string"
+                   "$schema": "http://json-schema.org/draft-04/schema#",
+                   "title" : "Dead Drop",
+                   "description" : "name and content of dead drop",
+                   "type": "object",
+                   "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "message": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["name", "message"]
                 }
-    post:
-      description: adds message and dead drop with `name = {name}`
-      body:
-        application/json:
-          example: |
-            "the squirrel is not home"
-          schema: |
-            {
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "title" : "message",
-              "description" : "Message of dead drop",
-              "type" : "string"
-            }
-      responses:
-        200:
     put:
       description: updates message of dead drop with `name = {name}`
       body:
         application/json:
           example: |
-            "eagle has landed"
+            { "name" : "abandoned-car", "message" : "the eagle has landed" }
           schema: |
             {
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "title" : "message",
-              "description" : "Message of dead drop",
-              "type" : "string"
-            }
+               "$schema": "http://json-schema.org/draft-04/schema#",
+               "title" : "Dead Drop",
+               "description" : "name and content of dead drop",
+               "type": "object",
+               "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": ["name", "message"]
+             }
       responses:
-        200:
+        204:
           body:
             application/json:

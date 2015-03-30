@@ -8,10 +8,11 @@ PUT /dead-drops/{name} -> 200
 
 {before, after} = require 'hooks'
 
-before 'GET /deadrops/old-tree -> 200', (test, done) ->
+before 'GET /deadrops/{name} -> 200', (test, done) ->
+  test.request.path = '/deadrops/abandoned-car'
   done()
 
-after 'GET /dead-drops/old-tree -> 200', (test, done) ->
+after 'GET /dead-drops/{name} -> 200', (test, done) ->
   machine = test.response.body[0]
   console.log machine.name
   done()
