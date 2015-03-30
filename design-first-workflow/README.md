@@ -14,10 +14,10 @@ first create a spec with editor or online tools
 * [raml](api.raml)
 * [apiblueprint](blueprint.md)
 
-##helpful tools
+##helpful tools (incomplete list)
 ####mock server
-* [api-mock]() – usage : `api-mock blueprint.md`
-* [drakov]() – usage : `drakov -f blueprint.md`
+* [api-mock](https://github.com/localmed/api-mock) – usage : `api-mock blueprint.md`
+* [drakov](https://github.com/Aconex/drakov) – usage : `drakov -f blueprint.md`
 * [raml-mockup](https://github.com/gextech/raml-mockup) – usage `raml-mockup api.raml`
 
 ####verify endpoints
@@ -27,3 +27,7 @@ first create a spec with editor or online tools
 ####codegen
 * [raml to jaxrs](raml-to-jaxrs) – creates jersey interfaces – usage `mvn generate-sources`
 * [swagger-codegen](../legacy-workflow/codegen) – creates server/client code – usage `mvn swagger-codegen:generate`
+
+## Noteworthy
+* [https://github.com/playround/rspec_api_blueprint](blueprint from rspec)
+* [https://github.com/pixelfusion/blueman](blueprint to postman)
