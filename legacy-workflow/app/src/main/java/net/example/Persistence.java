@@ -2,10 +2,11 @@ package net.example;
 
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
+
+import static java.util.Arrays.asList;
+import static java.util.Arrays.deepToString;
 
 /**
  * Created by mbdecke on 3/25/15.
@@ -13,29 +14,33 @@ import java.util.stream.Collectors;
 @Component
 public class Persistence {
 
-    private Map<String, String> dbMock;
+    private Map<String, DeadDrop> dbMock;
 
     public Persistence() {
         dbMock = new HashMap<>();
+        DeadDrop deadDrop = new DeadDrop();
+        deadDrop.setName("abandoned-car");
+        deadDrop.setMessage("the eagle has landed");
+        dbMock.put("abandoned-car", deadDrop);
     }
 
-    public void insert(String key, String value) {
-        dbMock.put(key, value);
+    public void insert(DeadDrop deadDrop) {
+        dbMock.put(deadDrop.getName(), deadDrop);
     }
 
-    public String select(String key) {
+    public DeadDrop select(String key) {
         return dbMock.get(key);
     }
 
-    public void update(String key, String value) {
-        dbMock.replace(key, value);
+    public void update(DeadDrop deadDrop) {
+        dbMock.put(deadDrop.getName(), deadDrop);
     }
 
     public void delete(String key) {
         dbMock.remove(key);
     }
 
-    public List<String> selectAllKeys() {
-        return dbMock.keySet().stream().collect(Collectors.toList());
+    public List<DeadDrop> selectAllKeys() {
+        return new ArrayList<>(dbMock.values());
     }
 }

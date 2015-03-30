@@ -14,20 +14,16 @@ public class Service {
     @Autowired
     Persistence persistence;
 
-    public List<String> getDeadrops() {
+    public List<DeadDrop> getDeadrops() {
         return persistence.selectAllKeys();
     }
 
-    public void addDeadDrop(String key, String value) {
-        persistence.insert(key, value);
-    }
-
-    public String getMessage(String name) {
+    public DeadDrop getDeadDrop(String name) {
         return persistence.select(name);
     }
 
-    public void setMessage(String key, String value) {
-        persistence.update(key, value);
+    public void setDeadDrop(DeadDrop deadDrop) {
+        persistence.update(deadDrop);
     }
 
     public void removeDeadDrop(String name) {
